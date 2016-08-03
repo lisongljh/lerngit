@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>个人信息</title>
+<script type="text/javascript" src="./js/jquery-1.4.3.js"></script>
+</head>
+<style>
+	.background{width:100%;background-color: rgb(218,218,218);}
+	.head{width:100%;height: 64px;background-color: rgb(57,58,63);}
+	.titleLabel{color: rgb(180,180,180);}
+	
+	.demo{
+		width:32px;
+    	margin:0 auto;/*CSS才是水平居中全靠他了*/  
+		}  
+		
+</style>
+<body id="mybody">
+
+	<div class ="background" style="height: 3%;"></div>
+	
+	<div style="height: 12%;">
+		<div style="width: 18%;height:100%;float: left;">
+			<img alt="" src="./img/head.png" height="100%" width="100%">
+		</div>
+		<div  style="width: 82%;float: right;height: 100%;">
+			<div style="height: 40%"></div>
+			<label style="height: 30%;margin-left: 10px;color: rgb(79,79,79);">SakuraBury</label>
+			<div style="height: 30%"></div>
+		</div>
+	</div>
+	
+	<div class ="background" style="height: 10%;"></div>
+	
+	<div style="height: 8%">
+		<div style="width: 10%;height:98%;float: left;margin-top: 1px;">
+			<img alt="" src="./img/save.png" height="100%" width="100%">
+		</div>
+		<div  style="width: 90%;float: right;height: 100%">
+			<div style="height: 30%"></div>
+			<label style="height: 50%;margin-left: 10px;color: rgb(110,110,110);">已收藏的活动</label>
+			<div style="height: 20%"></div>
+		</div>
+	</div>
+	
+	<div class ="background" style="height: 1%;"></div>
+	
+	<div style="height: 8%">
+		<div style="width: 10%;height:98%;float: left;margin-top: 1px;">
+			<img alt="" src="./img/active.png" height="100%" width="100%">
+		</div>
+		<div  style="width: 90%;float: right;height: 100%">
+			<div style="height: 30%"></div>
+			<label style="height: 50%;margin-left: 10px;color: rgb(110,110,110);">已参与的活动</label>
+			<div style="height: 20%"></div>
+		</div>
+	</div>
+	
+	<div class ="background" style="height: 6%;"></div>
+	
+	<div style="height: 8%">
+		<div style="width: 10%;height:98%;float: left;margin-top: 1px;">
+			<img alt="" src="./img/pretive.png" height="100%" width="100%">
+		</div>
+		<div  style="width: 90%;float: right;height: 100%">
+			<div style="height: 30%"></div>
+			<label style="height: 50%;margin-left: 10px;color: rgb(110,110,110);">活动预告</label>
+			<div style="height: 20%"></div>
+		</div>
+	</div>
+	
+	<div class ="background" style="height: 44%;">
+		<div style="height: 18%"></div>
+		<div class="demo" style="height: 42%;">
+			<img alt="" src="./img/xunzhang.png">
+		</div>
+		<div style="text-align: center;">
+			<label class = "titleLabel" style="width: 100%;margin-left: 25px;">已获得勋章3枚</label>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+// function $(id){       //获指定id的element，方法形如jQuery
+//     return document.getElementById(id);
+// }
+function getHeight(){
+	var sh =  $(window).height()-20;
+	
+    $("#mybody").css("height",sh+"px"); //设定定高
+}
+window.onload=function()
+{
+	getHeight();
+}
+</script>
+</html>

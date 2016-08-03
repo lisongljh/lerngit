@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>活动报名</title>
+</head>
+<script type="text/javascript" src="./js/jquery-1.4.3.js"></script>
+<script type="text/javascript" src="./js/ajaxNetwork.js"></script>
+<script type="text/javascript">
+	
+</script>
+<style>
+	
+	.head{width:100%;height: 64px;background-color: rgb(57,58,63);}
+	.titleLabel{color: rgb(180,180,180);}
+	.inputStyle{height: 100%;width: 98%;}
+	body{
+    background: -moz-linear-gradient(top, #DAE6F4 100%, #CDDCE6 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,#DAE6F4), color-stop(100%,#CDDCE6));
+    background: -webkit-linear-gradient(top, #DAE6F4 100%,#CDDCE6 100%);
+    background: -o-linear-gradient(top, #DAE6F4 100%,#CDDCE6 100%);
+    background: -ms-linear-gradient(top, #DAE6F4 100%,#CDDCE6 100%);
+    background: linear-gradient(to bottom, #DAE6F4 100%,#CDDCE6 100%);
+    font-family: '微软雅黑';
+	}
+</style>
+<body  id="mybody" >
+
+<form action="/user/applyActivity.json" method="post" style="height: 100%;width: 100%">
+	<div class="background" style="height: 14%">
+		<div style="height: 70%"></div>
+		<label class = "titleLabel" style="margin-left: 10px;">个人姓名</label>
+	</div >
+	<div style="height: 7%">
+		<input class="inputStyle" name="usrName">
+	</div>
+	<div class="background" style="height: 8%">
+		<div style="height: 40%"></div>
+		<label class = "titleLabel" style="margin-left: 10px;">联系方式（电话）</label>
+	</div>
+	<div style="height: 7%">
+		<input class="inputStyle" name="usrTel">
+	</div>
+	<div class="background" style="height: 64%">
+		<div style="height: 10%"></div>
+		<label class = "titleLabel" style="margin-left: 10px;">性别</label>
+		<div style="height: 5%"></div>
+		<div class="titleLabel">
+			 <div style="width: 25%;height:50px;float: left;"><label><input name="userType" type="radio" value="男"  />男 </label></div>
+			 <div style="width: 25%;height:50px;float: left;"><label><input name="userType" type="radio" value="女"  />女 </label></div>
+		</div>
+
+		<div style="height: 5%"></div>
+		<label class = "titleLabel" style="margin-left: 10px;text-align: left;">儿童人数</label>
+		<div style="height: 5%"></div>
+		<div class="titleLabel">
+			<div style="width: 25%;height:50px;float: left;"><label><input name="childNum" type="radio" value="0"  />无</label></div>
+			<div style="width: 25%;height:50px;float: left;"><label><input name="childNum" type="radio" value="1"  />1</label></div>
+			<div style="width: 25%;height:50px;float: left;"><label><input name="childNum" type="radio" value="2"  />2</label></div>
+			<div style="width: 25%;height:50px;float: left;"><label><input name="childNum" type="radio" value="3"  />3</label></div>
+		</div>
+		<input type="hidden" id="code" name="code" value="031HLhjm1uDw2x0hDvlm1ucjjm1HLhjm"/>
+		<input type="hidden" id="activityId" name="activityId" value="21"/>
+
+		<div style="height: 20%"></div>
+		<div>
+			<input id="register" style="width: 50%;margin-left:25%;background-color:rgb(58,170,0);color: white;" type="submit"  value="立即报名" onclick="" />
+		</div>
+		<div style="text-align: center;">
+			<label class = "titleLabel" style="width: 100%;">*只需在第一次报名是填写</label>
+		</div>		
+	</div>
+	</form>
+</body>
+<script type="text/javascript">
+
+function getHeight(){
+	var sh =  $(window).height()-20;
+
+    $("#mybody").css("height",sh+"px"); //设定定高
+}
+window.onload=function()
+{
+	getHeight();
+	var url = window.location.search;
+	alert(url);
+	var code = url.match(/code=(\S+)&/)[1];
+
+	var state=url.match(/state=(\S+)/)[1];
+
+	var tmp=document.getElementById("code");
+	var tmp1=document.getElementById("activityId");
+	tmp1.value="21";
+	tmp.value="0113pAPm1OQ9Zx0xkhPm1fbsPm13pAPF";
+	alert(code);
+	alert(1);
+	var urlDest = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx7aae205ef3729ea0&secret=91d29f9a0d6b178f1e2080d2a59579e7&code="+code+"&grant_type=authorization_code";
+/* 	$.get(urlDest,function(data){
+		alert(3);
+		alert(data);
+	}); */
+	
+	
+	
+	
+	$.ajax(  
+		    {  
+		        type:'get',  
+		        url : urlDest,  
+		        dataType : 'jsonp',  
+		        jsonp:"jsoncallback",  
+		        success  : function(data) {  
+		            alert('13');  
+		        },  
+		        error : function() {  
+		            alert('fail');  
+		        }  
+		    }  
+		);
+	alert(2);
+}
+
+$("#register").click ( function(){
+	
+	alert(1);
+});
+
+
+</script>
+<script type="text/javascript">
+
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>报名成功</title>
+</head>
+<style>
+	body{  
+		padding:0px;  
+		margin:0px;  
+		padding-top:20px;  
+		nt-size:10pt;  
+		background-color: rgb(218,218,218);
+		}  
+	.demo{  
+    	margin:0 auto;/*CSS才是水平居中全靠他了*/  
+		}  
+</style>
+<body id="mybody">
+	<div style="vertical-align: middle;height: 100%;width: 100%">
+		<div style="height: 100px"></div>
+		<div>
+			<div style="width: 20%;float: left;"></div>
+			<div class="demo" style=" width:80%;float: right;">
+				<img alt="" src="./img/success.png" >
+			</div>
+		</div>
+		
+	</div>
+	
+</body>
+<script type="text/javascript">
+function $(id){       //获指定id的element，方法形如jQuery
+    return document.getElementById(id);
+}
+function getHeight(){
+	var sh = screen.height/2 - 64;
+    $("mybody").style.height=sh+"px"; //设定定高
+}
+window.onload=function()
+{
+	getHeight();
+}
+</script>
+</html>
